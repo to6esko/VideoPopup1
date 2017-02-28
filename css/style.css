@@ -11,13 +11,13 @@ html,body{
 .btn .video .btn-left .btn-right .border-bottom .commentBox .comment
 .contentText .border-bottom .textBox .text .gradient .commentText .footer
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
-.reply-comment .piramida {
+.reply-comment .piramida .commentContent {
     zoom:1;
 }
 .btn .video .btn-left .btn-right .border-bottom .commentBox .comment
 .contentText .border-bottom .textBox .text .gradient .commentText .footer
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
-.reply-comment .piramida {
+.reply-comment .piramida .commentContent {
     content: "";
     clear: both;
     display: block;
@@ -29,14 +29,17 @@ img{
 
 body{
     width: 50%;
-    height: auto;
     margin: auto;
     font-size:16px;
     background-color: rgb(35,35,36);
 }
-.back-ground {
-    width: 870px;
-    height: 985px;
+#app{
+    max-width: 870px;
+    height: auto;
+}
+.backgroundApp {
+    max-width: 100%;
+    height: auto;
     margin-top:50px;
     background-color: white;
     border: 1px solid black;
@@ -82,14 +85,13 @@ li img:hover{
     cursor: pointer;
 }
 .video {
-    position: absolute;
+    position: relative;
     padding:31px 31px 0 31px;
     border-radius: 5px; 
 }
 .btn{
     position:absolute;
-    top:497px;
-    
+    width: 100%;
 }
 .btn ul{
     display: -webkit-inline-box;
@@ -100,10 +102,9 @@ li img:hover{
     margin-left: -6px;
 }
 .btn-right{
-    position: relative;
-    float: right;
-    top:-65px;
-    left:658px;
+    position: absolute;
+    top:-116px;
+    right: -1%;
 }
 .btn-right li{
     padding:0 9px 10px 0;
@@ -111,29 +112,41 @@ li img:hover{
 
 .border-bottom{
     position: relative;
-    bottom:470px;
+    top:52px;
     margin: 0 31px 0 1px;
     border-bottom: 1px solid #e6e6e6;
     padding-bottom: 36px;
-    width: 837px;
 }
 .commentBox{
     position: relative;
+    top:65px;
     margin: -8px 31px 0 31px;
 }
 
 .comment{
-    font-family: ProximaNova Regular,Myriad Pro Regular;
+    font-family: 'Ubuntu', sans-serif;;
     font-style: italic;
     color: #8e9197;
     font-size: 18pt;
-    width: 806px;
+    width: 100%;
     padding: 11.5px;
     padding-left: 17px;
     display: inline-block;
     border: 2px solid #e6e6e6;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+.commentContent {
+    font-family: ProximaNova Regular,Myriad Pro Regular;
+    color: #8e9197;
+    font-size: 16pt;
+    width: 100%;
+    padding: 30px;
+    padding-left: 50px;
+    display: inline-block;
+    box-sizing: border-box;
+       
 }
 
 .textBox{
