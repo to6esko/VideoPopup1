@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import NavVideo from './pages/navVideo';
 import HeaderText from './pages/headerText';
+import Footer from './pages/footer';
 
 export default class App extends React.Component {
     render() {
@@ -17,6 +18,9 @@ export default class App extends React.Component {
                 <div>
                     <HeaderText />
                 </div>
+                <div>
+                    <Footer/>
+                    </div>
             </div>
         )
     }

@@ -4,10 +4,11 @@ export default class HeaderText extends React.Component {
     render() {
         return (
             <div>
-                <div className="border-bottom">
+                
                     <div className="commentBox">
                         <input type="text" className="comment" name="comment" placeholder="comment..." />
                     </div>
+                <div className="border-bottom">
                 </div>
                 <div className="textBox">
                     <img src="img/snimka.jpg" alt="Stoyan" />
