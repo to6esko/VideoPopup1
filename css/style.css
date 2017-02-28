@@ -40,7 +40,7 @@ body{
 .backgroundApp {
     max-width: 100%;
     height: auto;
-    margin-top:50px;
+    margin:50px 0 50px 0;
     background-color: white;
     border-radius: 5px;
 }
@@ -127,10 +127,10 @@ li img:hover{
 }
 
 .comment{
-    font-family: 'Ubuntu', sans-serif;;
+    font-family: Myriad Pro Regular;
     font-style: italic;
     color: #8e9197;
-    font-size: 18pt;
+    font-size: 16pt;
     width: 100%;
     padding: 11px;
     padding-left: 17px;
@@ -141,9 +141,9 @@ li img:hover{
 }
 
 .commentContent {
-    font-family: ProximaNova Regular,Myriad Pro Regular;
+    font-family: Myriad Pro Regular;
     color: #8e9197;
-    font-size: 16pt;
+    font-size: 12pt;
     width: 100%;
     padding: 30px;
     padding-left: 50px;
@@ -165,14 +165,14 @@ li img:hover{
    line-height: 0%;
 }
 .text h1{
-    font-family: Merriwather,Myriad Pro Regular;
+    font-family: Supermercado One;
     font-size:18pt;
     font-weight: bold;
     color: 	#28b7d7;
     display: inline-block;
 }
 .text p{
-    font-family: ProximaNova Regular,Myriad Pro Regular;
+    font-family: PT Sans;
     font-size:10pt;
     letter-spacing: -1px;
     color:#b5b5b5;
@@ -187,7 +187,9 @@ li img:hover{
     top: 95px;
     margin:22px 0 0 30px;
 }
-
+.heightFooter{
+    height: 103px;
+}
 .footer{
     display: block;
     position:relative;
@@ -241,7 +243,7 @@ li img:hover{
 .reply{
     position: relative;
     margin: 0 31px 0 32px;
-    top: -26px;
+    top: -23px;
 }
 
 .reply-comment{
