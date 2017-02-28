@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
-import createHistory from 'history/createBrowserHistory';
+
 
 import App from './components/app';
 import NavVideo from './components/pages/navVideo';
