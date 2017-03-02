@@ -11,13 +11,13 @@ html,body{
 .btn .video .btn-left .btn-right .border-bottom .commentBox .comment
 .contentText .border-bottom .textBox .text .gradient .commentText .footer
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
-.reply-comment .piramida .commentContent {
+.reply-comment .piramida .commentContent .edit-delete {
     zoom:1;
 }
 .btn .video .btn-left .btn-right .border-bottom .commentBox .comment
 .contentText .border-bottom .textBox .text .gradient .commentText .footer
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
-.reply-comment .piramida .commentContent {
+.reply-comment .piramida .commentContent .edit-delete {
     content: "";
     clear: both;
     display: block;
@@ -115,10 +115,9 @@ li img:hover{
 
 .border-bottom{
     position: relative;
-    top:67px;
+    top:103px;
     margin-right: 31px;
     border-bottom: 1px solid #e6e6e6;
-    padding-bottom: 36px;
 }
 .commentBox{
     position: relative;
@@ -128,8 +127,7 @@ li img:hover{
 
 .comment{
     font-family: Myriad Pro Regular;
-    font-style: italic;
-    color: #8e9197;
+    color: #192a3e;
     font-size: 16pt;
     width: 100%;
     padding: 11px;
@@ -142,16 +140,22 @@ li img:hover{
 
 .commentContent {
     font-family: Myriad Pro Regular;
-    color: #8e9197;
-    font-size: 12pt;
+    color: #192a3e;
+    font-size: 16pt;
     width: 100%;
-    padding: 30px;
-    padding-left: 50px;
+    padding:0 0 0 20px;
     display: inline-block;
-    box-sizing: border-box;
-       
+    box-sizing: border-box; 
 }
-
+ 
+ .edit-delete{
+     float: right;
+     margin: 5px;
+ }
+ .edit-delete:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
 .textBox{
     position: relative;
     top: 82px;
@@ -265,3 +269,4 @@ li img:hover{
     left:24px;
     top:-4px;
 }
+
