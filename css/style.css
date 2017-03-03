@@ -8,13 +8,17 @@ html,body{
  box-sizing: border-box;
 }
 
-.btn .video .btn-left .btn-right .border-bottom .commentBox .comment
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.pop .pop-form .pop-input .pop-btn .btn .video .btn-left .btn-right .border-bottom .commentBox .comment
 .contentText .border-bottom .textBox .text .gradient .commentText .footer
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
 .reply-comment .piramida .commentContent .edit-delete {
     zoom:1;
 }
-.btn .video .btn-left .btn-right .border-bottom .commentBox .comment
+.pop .pop-form .pop-input .pop-btn .btn .video .btn-left .btn-right .border-bottom .commentBox .comment
 .contentText .border-bottom .textBox .text .gradient .commentText .footer
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
 .reply-comment .piramida .commentContent .edit-delete {
@@ -83,11 +87,52 @@ li img:hover{
     opacity: 0.5;
     cursor: pointer;
 }
+.pop{
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    top: 110px;
+    left:30%;
+    opacity: 0.9;
+    background-color: white;
+    border:1px solid #e6e6e6;
+    border-radius: 5px; 
+}
+.pop-form{
+    position: relative;
+    top: 80px;
+    left: 70px;
+}
+
+.pop-input{
+    padding: 2px 15px 2px 15px;
+}
+
+.pop-btn{
+    position: relative;
+    left: 153px;
+    padding: 2px 5px 2px 5px;
+    margin: 5px;
+}
+.pop-btn:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
 .video {
+    width: 100%;
     position: relative;
     padding:31px 29px 0 32px;
     border-radius: 5px; 
 }
+/*
+.video-content{
+    display: block;
+    position: relative;
+    width: 806px;
+    height: 412px;
+}
+*/
 .btn{
     position:relative;
     width: 100%;

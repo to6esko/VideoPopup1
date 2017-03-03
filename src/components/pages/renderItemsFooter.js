@@ -50,7 +50,9 @@ export default class RenderItemsNav extends React.Component {
                     <button className="edit-delete" onClick={this.onEditClick.bind(this)}>Edit</button>
                     <br />
                     <AddText comment={this.state.comment} />
-                    <button className="edit-delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
+                    <div onClick={this.handleClick.bind(this)}>
+                        <button className="edit-delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
+                    </div>
                 </div>
             )
         }
