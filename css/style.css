@@ -85,7 +85,7 @@ li img:hover{
 }
 .video {
     position: relative;
-    padding:31px 31px 0 31px;
+    padding:31px 29px 0 32px;
     border-radius: 5px; 
 }
 .btn{
@@ -102,12 +102,12 @@ li img:hover{
 }
 .btn-left li{
     padding: 0 30px 10px 0;
-    margin-left: -10px;
+    margin-left: -7px;
 }
 .btn-right{
     position: absolute;
     top:-8px;
-    right:2.6%;
+    right:2.3%;
 }
 .btn-right li{
     padding:0 9px 10px 0;
@@ -116,13 +116,14 @@ li img:hover{
 .border-bottom{
     position: relative;
     top:103px;
+    width: 96.6%;
     margin-right: 31px;
     border-bottom: 1px solid #e6e6e6;
 }
 .commentBox{
     position: relative;
     top:67px;
-    margin: -8px 31px 0 29px;
+    margin: -8px 31px 0 31px;
 }
 
 .comment{
@@ -130,8 +131,8 @@ li img:hover{
     font-style: italic;
     color: #192a3e;
     font-size: 16pt;
-    width: 100%;
-    padding: 11px;
+    width: 100.25%;
+    padding: 12.5px;
     padding-left: 17px;
     display: inline-block;
     border: 2px solid #e6e6e6;
@@ -159,47 +160,36 @@ li img:hover{
 }
 .textBox{
     position: relative;
-    top: 82px;
-    padding:31px 31px 0 15px;
+    top: 118px;
+    padding:31px 31px 0 14px;
     border-radius: 5px; 
 }
 
 .text{
    position: relative;
-   margin: -54px 0 0 67px;
+   top: -47px;
+   margin-left:67px;
    line-height: 0%;
 }
-.text h1{
-    font-family: Supermercado One;
-    font-size:18pt;
-    font-weight: bold;
-    color: 	#28b7d7;
-    display: inline-block;
-}
-.text p{
-    font-family: PT Sans;
-    font-size:10pt;
-    letter-spacing: -1px;
-    color:#b5b5b5;
-    font-weight: 600;
-}
 .gradient{
-    margin: 27px 0 0 1px;
+    margin: -14px 0 11px 1px;
 }
 .commentText{
-    width: 90.7%;
+    width: 91.2%;
     position:absolute;
-    top: 95px;
+    top: 103px;
     margin:22px 0 0 30px;
 }
-.heightFooter{
-    height: 103px;
-}
+
 .footer{
     display: block;
     position:relative;
-    margin-left: 13px;
+    margin-left: 12px;
     top:-69px;
+}
+.btn-footer{
+    position: absolute;
+    top:25px;
 }
 .btn-footer ul{
     margin-left: -8px;
@@ -218,22 +208,24 @@ li img:hover{
     list-style: none;
 }
  .btn-footer-right {
-    position: absolute;
-    left:88.7%;
+    position: relative;
+    list-style: none;
+    top: 40px;
+    left:89%;
  }
 
 .footerBottom{
     position: relative;
-    bottom:14px;
+    top:53px;
     margin-left: 7px;
     border-bottom: 1px solid #e6e6e6;
-    width: 95.6%;
+    width: 95.9%;
 }
 
 .footer-btn{
     position:relative;
     margin-left: 1px;
-    top:-19px;
+    top:48px;
 }
 
 .footer-btn li{
@@ -248,16 +240,16 @@ li img:hover{
 .reply{
     position: relative;
     margin: 0 31px 0 32px;
-    top: -23px;
+    top: 40px;
 }
 
 .reply-comment{
     font-family: ProximaNova Regular,Myriad Pro Regular;
     font-style: italic;
     color: #8e9197;
-    width: 100%;
+    width: 100.25%;
     font-size: 18pt;
-    padding: 11.5px;
+    padding: 12.5px;
     padding-left: 20px;
     display: inline-block;
     border: 1px solid #e6e6e6;
