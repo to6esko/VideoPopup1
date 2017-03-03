@@ -125,14 +125,14 @@ li img:hover{
     padding:31px 29px 0 32px;
     border-radius: 5px; 
 }
-/*
+
 .video-content{
     display: block;
     position: relative;
-    width: 806px;
-    height: 412px;
+    max-width: 806px;
+    max-height: 412px;
 }
-*/
+
 .btn{
     position:relative;
     width: 100%;
