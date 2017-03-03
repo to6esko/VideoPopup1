@@ -127,6 +127,7 @@ li img:hover{
 
 .comment{
     font-family: Myriad Pro Regular;
+    font-style: italic;
     color: #192a3e;
     font-size: 16pt;
     width: 100%;
@@ -141,7 +142,7 @@ li img:hover{
 .commentContent {
     font-family: Myriad Pro Regular;
     color: #192a3e;
-    font-size: 16pt;
+    font-size: 14pt;
     width: 100%;
     padding:0 0 0 20px;
     display: inline-block;

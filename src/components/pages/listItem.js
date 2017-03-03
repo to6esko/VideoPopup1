@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-export default class HeaderText extends React.Component {
+export default class ListItem extends React.Component {
     
     render() {
         
