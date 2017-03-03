@@ -35,16 +35,11 @@ export default class NavVideo extends React.Component {
     render() {
         return (
             <div>
-                
                 <div className="video">
-                    
-                <div className="video-content">
                     {this.enterButton()}
-                    {/*{<iframe width="806" height="412" src="https://www.youtube.com/embed/9sg-A-eS6Ig" frameborder="0" allowfullscreen></iframe>}*/}
+                    {/*<iframe width="806" height="412" src="https://www.youtube.com/embed/9sg-A-eS6Ig" frameborder="0" allowfullscreen></iframe>*/}
             
-                    {<img src='img/video.jpg' alt="video" />}
-                       
-                </div>
+                    <img src='img/video.jpg' alt="video" />
                   </div>
                 <div className="btn">
                     <div className="btn-left">
