@@ -7,7 +7,7 @@ export default class NavVideo extends React.Component {
         super(props);
         this.state = {
             showPop: true,
-            addres:""
+            addres: ""
         }
     }
     handleEnterClick() {
@@ -21,13 +21,16 @@ export default class NavVideo extends React.Component {
             return null;
         } else {
             return (
-                <div className="pop">
-                    <form className="pop-form">
-                        <input ref="popInner" type="text" className="pop-input" placeholder="Enter your You Tube addres..." />
-                        <div onClick={this.handleEnterClick.bind(this)}>
-                            <button className="pop-btn">Enter</button>
-                        </div>
-                    </form>
+                <div className="video">
+                    <img src='img/video.jpg' alt="video" />
+                    <div className="pop">
+                        <form className="pop-form">
+                            <input ref="popInner" type="text" className="pop-input" placeholder="Enter your You Tube addres..." />
+                            <div onClick={this.handleEnterClick.bind(this)}>
+                                <button className="pop-btn">Enter</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             )
         }
@@ -35,12 +38,11 @@ export default class NavVideo extends React.Component {
     render() {
         return (
             <div>
+                {this.enterButton()}
                 <div className="video">
-                    {this.enterButton()}
                     {/*<iframe width="806" height="412" src="https://www.youtube.com/embed/9sg-A-eS6Ig" frameborder="0" allowfullscreen></iframe>*/}
-            
-                    <img src='img/video.jpg' alt="video" />
-                  </div>
+
+                </div>
                 <div className="btn">
                     <div className="btn-left">
                         <ul>
