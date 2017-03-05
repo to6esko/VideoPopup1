@@ -1,47 +1,44 @@
 import React from 'react';
-
+import { Link } from 'react-router';
 
 
 export default class NavVideo extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            showPop: true,
-            addres: ""
-        }
+        this.props.url;
+        this.props.showPop;
     }
-    handleEnterClick() {
-        this.setState(prevState => ({
-            showPop: !prevState.showPop
-        }));
-    }
-    enterButton(props) {
-        const showPop = this.state.showPop;
-        if (!showPop) {
+    
+    addUrl(props) {
+        let url = this.props.url;
+        console.log(this.props.url);
+        const showPop = this.props.showPop;
+
+        if (showPop === true) {
             return null;
         } else {
             return (
-                <div className="video">
-                    <img src='img/video.jpg' alt="video" />
-                    <div className="pop">
-                        <form className="pop-form">
-                            <input ref="popInner" type="text" className="pop-input" placeholder="Enter your You Tube addres..." />
-                            <div onClick={this.handleEnterClick.bind(this)}>
-                                <button className="pop-btn">Enter</button>
-                            </div>
-                        </form>
-                    </div>
+                <div>
+                    <iframe width="806" height="412" src={`${url}`} frameborder="0" allowfullscreen></iframe>
                 </div>
             )
+           
+
         }
     }
+
+   
+   
     render() {
         return (
             <div>
-                {this.enterButton()}
+                
                 <div className="video">
-                    {/*<iframe width="806" height="412" src="https://www.youtube.com/embed/9sg-A-eS6Ig" frameborder="0" allowfullscreen></iframe>*/}
-
+                    {this.addUrl()}
+                    {/*<img src='img/video.jpg' alt="video" />*/}
+                    {/*<iframe width="806" height="412" src="https://youtu.be/SC4xMk98Pdc" frameborder="0" allowfullscreen></iframe>*/}
+                    {/*<iframe width="806" height="412" src="https://www.youtube.com/embed/SC4xMk98Pdc" frameborder="0" allowfullscreen></iframe>*/}
+                {/*{this.addUrl()}*/}
                 </div>
                 <div className="btn">
                     <div className="btn-left">
