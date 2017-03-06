@@ -10,7 +10,8 @@ const urlAddres = [
     {
         url: ''
     }
-]
+];
+
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -105,9 +106,7 @@ export default class App extends React.Component {
                 <div>
                     <div className="pop">
                         <form className="pop-form" onSubmit={this.handleSubmit.bind(this)}>
-                            
                                 <input ref="urlValue"  onClick={this.handleEnterClick.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube addres..." />
-                            
                             <div onClick={this.handlePopClick.bind(this)}>
                                 {this.closeButton()}
                             </div>    

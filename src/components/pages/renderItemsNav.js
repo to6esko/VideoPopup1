@@ -1,12 +1,16 @@
 import React from 'react';
-import AddText from './addText';
+import _ from 'lodash';
 
 const comment = [
     {
-        id: 0,
         comments: ''
     }
 ];
+
+function AddText(props) {
+    return <div className="commentContent">{props.comments}</div>
+}
+
 export default class RenderItemsNav extends React.Component {
     constructor(props) {
         super(props);
@@ -33,6 +37,10 @@ export default class RenderItemsNav extends React.Component {
         this.createComment(val);
         this.refs.createText.value = "";
     }
+    renderComments() {
+        return _.map(this.state.comment, (todo, i) =>
+            <AddText key={i} {...todo} />)
+    }
 
     handleClick() {
         this.setState(prevState => ({
@@ -49,10 +57,12 @@ export default class RenderItemsNav extends React.Component {
                 <div onSubmit={this.createComment.bind(this)}>
                     <button className="edit-delete" onClick={this.onEditClick.bind(this)}>Edit</button>
                     <br />
-                    <AddText comment={this.state.comment} />
+                    <div>
+                        {this.renderComments()}
+                        </div>
                     <div onClick={this.handleClick.bind(this)}>
                         <button className="edit-delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
-                    </div>    
+                    </div>
                 </div>
             )
         }

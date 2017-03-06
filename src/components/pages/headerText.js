@@ -1,5 +1,4 @@
 import React from 'react';
-import AddText from './addText';
 import RenderItemsNav from './renderItemsNav';
 
 
