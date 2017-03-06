@@ -16,10 +16,11 @@ export default class App extends React.Component {
         super(props);
         this.state = {
             showPop: true,
-            //url:''
+            showEnter: false,
             urlAddres
         }
     }
+    
     handleSubmit(url) {
         this.state.urlAddres.push(url);
         this.setState({ urlAddres: this.state.urlAddres });
@@ -42,15 +43,11 @@ export default class App extends React.Component {
         this.refs.urlValue.value = "";
         //console.log(this.handleSubmit(value));
         //this.setState({url:file})
-
     }
-
-
-    
 
     showPage() {
         const showPop = this.state.showPop;
-        if (showPop === true) {
+        if (showPop) {
             return null;
         } else {
             return (
@@ -76,11 +73,28 @@ export default class App extends React.Component {
         }
     }
 
-
     handleEnterClick() {
+        this.setState(prevState => ({
+            showEnter: !prevState.showEnter
+        }));
+    }
+
+    handlePopClick() {
         this.setState(prevState => ({
             showPop: !prevState.showPop
         }));
+    }
+    closeButton() {
+        const showEnter = this.state.showEnter;
+        if (!showEnter) {
+            return null;
+        } else {
+            return (
+                <div onClick={this.handleEnterClick.bind(this)}>
+                    <button /*onClick={this.getUrl.bind(this)}*/ className="pop-btn">Enter</button>
+                </div>
+            )
+        }
     }
     enterButton(props) {
         const showPop = this.state.showPop;
@@ -91,10 +105,12 @@ export default class App extends React.Component {
                 <div>
                     <div className="pop">
                         <form className="pop-form" onSubmit={this.handleSubmit.bind(this)}>
-                            <input ref="urlValue" type="text" className="pop-input" placeholder="Enter your You Tube addres..." />
-                            <div onClick={this.handleEnterClick.bind(this)}>
-                                <button onClick={this.getUrl.bind(this)} className="pop-btn">Enter</button>
-                            </div>
+                            
+                                <input ref="urlValue"  onClick={this.handleEnterClick.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube addres..." />
+                            
+                            <div onClick={this.handlePopClick.bind(this)}>
+                                {this.closeButton()}
+                            </div>    
                         </form>
                     </div>
                 </div>
