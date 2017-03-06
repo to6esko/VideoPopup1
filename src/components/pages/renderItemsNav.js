@@ -30,7 +30,7 @@ export default class RenderItemsNav extends React.Component {
         this.setState({ comment: this.state.comment });
     }
 
-    onEditClick(event) {
+    onEnterClick(event) {
         event.preventDefault();
         const createText = this.refs.createText;
         const val = createText.value;
@@ -55,7 +55,7 @@ export default class RenderItemsNav extends React.Component {
         } else {
             return (
                 <div onSubmit={this.createComment.bind(this)}>
-                    <button className="edit-delete" onClick={this.onEditClick.bind(this)}>Edit</button>
+                    <button className="edit-delete" onClick={this.onEnterClick.bind(this)}>Enter</button>
                     <br />
                     <div>
                         {this.renderComments()}
