@@ -46,6 +46,7 @@ body{
 .backgroundApp {
     max-width: 100%;
     height: auto;
+    position: absolute;
     margin:50px 0 50px 0;
     background-color: white;
     border-radius: 5px;
@@ -155,15 +156,13 @@ li img:hover{
 
 .border-bottom{
     position: relative;
-    top:103px;
     width: 96.6%;
-    margin-right: 31px;
+    margin: 45px 31px 25px 0;
     border-bottom: 1px solid #e6e6e6;
 }
 .commentBox{
     position: relative;
-    top:67px;
-    margin: -8px 31px 0 31px;
+    margin: 55px 31px 0 31px;
 }
 
 .comment{
@@ -200,7 +199,6 @@ li img:hover{
 }
 .textBox{
     position: relative;
-    top: 118px;
     padding:31px 31px 0 14px;
     border-radius: 5px; 
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import NavVideo from './pages/navVideo';
-import HeaderText from './pages/headerText';
+import RenderItemsNav from './pages/renderItemsNav';
 import Footer from './pages/footer';
 
 
@@ -62,10 +62,10 @@ export default class App extends React.Component {
                                 <NavVideo />
                             </div>
                             <div>
-                                <HeaderText />
+                                <RenderItemsNav />
                             </div>
                             <div>
-                                <Footer />
+                                
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@ export default class App extends React.Component {
                 <div>
                     <div className="pop">
                         <form className="pop-form" onSubmit={this.handleSubmit.bind(this)}>
-                                <input ref="urlValue"  onClick={this.handleEnterClick.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube addres..." />
+                                <input ref="urlValue"  onPaste={this.handleEnterClick.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube addres..." />
                             <div onClick={this.handlePopClick.bind(this)}>
                                 {this.closeButton()}
                             </div>    

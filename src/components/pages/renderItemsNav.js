@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
+
 const comment = [
     {
         comments: ''
@@ -16,6 +17,7 @@ export default class RenderItemsNav extends React.Component {
         super(props);
         this.state = {
             showEditButton: false,
+            showDeleteButton: false,
             comment
         };
     }
@@ -42,26 +44,68 @@ export default class RenderItemsNav extends React.Component {
             <AddText key={i} {...todo} />)
     }
 
-    handleClick() {
+    handleEditClick() {
+        this.setState({
+            showEditButton: true
+        });
+    }
+    handleDeleteClick() {
+        this.setState({
+            showDeleteButton: true
+        })
+    }
+    onDeleteClick() {
         this.setState(prevState => ({
-            showEditButton: !prevState.showEditButton
+            showDeleteButton: !prevState.showDeleteButton
         }));
     }
-
     editButton(props) {
+        const onDeleteClick = this.state.onDeleteClick;
         const showEditButton = this.state.showEditButton;
-        if (!showEditButton) {
+        if (!showEditButton && !onDeleteClick) {
             return null;
         } else {
             return (
+                
                 <div onSubmit={this.createComment.bind(this)}>
-                    <button className="edit-delete" onClick={this.onEnterClick.bind(this)}>Enter</button>
-                    <br />
+                    
+                    <div onClick={this.handleDeleteClick.bind(this)}>
+                        
+                        <button className="edit-delete" onClick={this.onEnterClick.bind(this)}>Enter</button>
+                    </div>
                     <div>
-                        {this.renderComments()}
+                    {this.deleteButton() }
+                    </div>
+                </div>
+            )
+        }
+    }
+
+    deleteButton(props) {
+        const showDeleteButton = this.state.showDeleteButton;
+        if (!showDeleteButton) {
+            return null;
+        } else {
+            return (
+                    <div>
+                        <div>
+                        <div className="textBox">
+                            <img src="img/snimka.jpg" alt="Stoyan" />
+                            <div className="text">
+                                <img src="img/stoqn.jpg" alt="Stoqn" />
+                            </div>
+                            <div className="gradient">
+                                <img src="img/gradient.jpg" alt="gradient" />
+                            </div>
+                            <div className="commentText">
+                                {this.renderComments()}
+                                {/*<img src="img/text.jpg" alt="text" width="790" height="72" />*/}
+                            </div>
+                            <div onClick={this.onDeleteClick.bind(this)}>
+                                <button className="edit-delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
+                            </div>
+
                         </div>
-                    <div onClick={this.handleClick.bind(this)}>
-                        <button className="edit-delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
                     </div>
                 </div>
             )
@@ -71,8 +115,10 @@ export default class RenderItemsNav extends React.Component {
         return (
             <div>
                 <form className="commentBox" >
-                    <input onClick={this.handleClick.bind(this)} ref="createText" type="text" className="comment" placeholder="comment..." />
+                    <input onChange={this.handleEditClick.bind(this)} ref="createText" type="text" className="comment" placeholder="comment..." />
+                    <div className="border-bottom" />
                     {this.editButton()}
+                    
                 </form>
             </div>
         )
