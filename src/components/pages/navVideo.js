@@ -9,28 +9,14 @@ export default class NavVideo extends React.Component {
         this.props.showPop;
     }
     
-    addUrl(props) {
-        let url = this.props.url;
-        console.log(this.props.url);
-        const showPop = this.props.showPop;
-
-        if (showPop === true) {
-            return null;
-        } else {
-            return (
-                <div>
-                    <iframe width="806" height="412" src={`${url}`} frameborder="0" allowfullscreen></iframe>
-                </div>
-            )
-        }
-    }
+    
 
     render() {
         return (
             <div>
                 <div className="video">
                     {/*{this.addUrl()}*/}
-                    <img src='img/video.jpg' alt="video" />
+                    {/*<img src='img/video.jpg' alt="video" />*/}
                     {/*<iframe width="806" height="412" src="https://youtu.be/SC4xMk98Pdc" frameborder="0" allowfullscreen></iframe>*/}
                     {/*<iframe width="806" height="412" src="https://www.youtube.com/embed/SC4xMk98Pdc" frameborder="0" allowfullscreen></iframe>*/}
                 </div>

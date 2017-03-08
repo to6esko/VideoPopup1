@@ -16,14 +16,14 @@ html,body{
 .btn-left .btn-right .border-bottom .commentBox .comment .contentText 
 .border-bottom .textBox .text .gradient .commentText .footer 
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
-.reply-comment .piramida .commentContent .edit-delete {
+.reply-comment .piramida .commentContent .enter .delete .worning{
     zoom:1;
 }
 .pop .pop-form .pop-input .pop-btn .btn .video 
 .btn-left .btn-right .border-bottom .commentBox .comment .contentText
 .border-bottom .textBox .text .gradient .commentText .footer
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
-.reply-comment .piramida .commentContent .edit-delete {
+.reply-comment .piramida .commentContent .enter .delete .worning{
     content: "";
     clear: both;
     display: block;
@@ -110,11 +110,20 @@ li img:hover{
     padding: 2px 15px 2px 15px;
 }
 
+.worning {
+    position: relative;
+    color:red;
+}
+
 .pop-btn{
     position: relative;
     left: 153px;
-    padding: 2px 5px 2px 5px;
+    padding: 5px 10px 5px 10px;
     margin: 5px;
+    text-transform: uppercase;
+    background: black;
+    color: white;
+    font-size: 11px;
 }
 .pop-btn:hover{
     cursor: pointer;
@@ -189,18 +198,42 @@ li img:hover{
     box-sizing: border-box; 
 }
  
- .edit-delete{
+ .enter{
      float: right;
      margin: 5px;
+     padding: 5px 10px 5px 10px;
+    text-transform: uppercase;
+    background: black;
+    color: white;
+    font-size: 11px;
  }
- .edit-delete:hover{
+ .enter:hover{
     opacity: 0.5;
     cursor: pointer;
 }
+ .delete{
+     position: absolute;
+     float: right;
+     right: 5px;
+     top:150px;
+     padding: 5px 10px 5px 10px;
+    margin: 5px;
+    text-transform: uppercase;
+    background: red;
+    color: white;
+    font-size: 11px;
+ }
+ .delete:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+
 .textBox{
     position: relative;
     padding:31px 31px 0 14px;
-    border-radius: 5px; 
+    border-radius: 5px;
+    top:35px; 
 }
 
 .text{
@@ -223,7 +256,7 @@ li img:hover{
     display: block;
     position:relative;
     margin-left: 12px;
-    top:-69px;
+    top:-180px;
 }
 .btn-footer{
     position: absolute;

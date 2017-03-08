@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
+import Footer from './footer';
 
 const comment = [
     {
@@ -54,30 +55,32 @@ export default class RenderItemsNav extends React.Component {
             showDeleteButton: true
         })
     }
+    onEditClik() {
+        this.setState(prevState => ({
+            showEditButton: !prevState.showEditButton
+        }));
+    }
     onDeleteClick() {
         this.setState(prevState => ({
             showDeleteButton: !prevState.showDeleteButton
         }));
     }
     editButton(props) {
-        const onDeleteClick = this.state.onDeleteClick;
         const showEditButton = this.state.showEditButton;
-        if (!showEditButton && !onDeleteClick) {
+        if (!showEditButton) {
             return null;
         } else {
             return (
-                
                 <div onSubmit={this.createComment.bind(this)}>
-                    
                     <div onClick={this.handleDeleteClick.bind(this)}>
-                        
-                        <button className="edit-delete" onClick={this.onEnterClick.bind(this)}>Enter</button>
+                        <button className="enter" onClick={this.onEnterClick.bind(this)}>Enter</button>
                     </div>
                     <div>
                     {this.deleteButton() }
                     </div>
                 </div>
             )
+            
         }
     }
 
@@ -96,15 +99,18 @@ export default class RenderItemsNav extends React.Component {
                             </div>
                             <div className="gradient">
                                 <img src="img/gradient.jpg" alt="gradient" />
-                            </div>
+                            
                             <div className="commentText">
                                 {this.renderComments()}
                                 {/*<img src="img/text.jpg" alt="text" width="790" height="72" />*/}
                             </div>
                             <div onClick={this.onDeleteClick.bind(this)}>
-                                <button className="edit-delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
+                                <button className="delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
                             </div>
-
+                            <div>
+                                <Footer />
+                            </div> 
+                            </div>    
                         </div>
                     </div>
                 </div>
@@ -114,12 +120,11 @@ export default class RenderItemsNav extends React.Component {
     render() {
         return (
             <div>
-                <form className="commentBox" >
+                <div className="commentBox" >
                     <input onChange={this.handleEditClick.bind(this)} ref="createText" type="text" className="comment" placeholder="comment..." />
                     <div className="border-bottom" />
                     {this.editButton()}
-                    
-                </form>
+                </div>
             </div>
         )
     }
