@@ -62,7 +62,7 @@ export default class App extends React.Component {
         }
     }    
 
-    
+
     showPage() {
         const showPop = this.state.showPop;
         if (showPop) {
@@ -74,7 +74,7 @@ export default class App extends React.Component {
                         <div>
                             <a href="#" className="close-icon"></a>
                         </div>
-                        <div className="video">
+                        <div>
                             {this.addUrl()}
                             <NavVideo />
                         </div>

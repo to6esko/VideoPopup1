@@ -55,13 +55,13 @@ export default class RenderItemsNav extends React.Component {
         } else {
             return (
                 <div onSubmit={this.createComment.bind(this)}>
-                    <button className="enter" onClick={this.onEnterClick.bind(this)}>Enter</button>
+                    <button className="footer-enter" onClick={this.onEnterClick.bind(this)}>Enter</button>
                     <br />
                     <div>
                         {this.renderComments()}
                         </div>
                     <div onClick={this.handleClick.bind(this)}>
-                        <button className="delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
+                        <button className="footer-delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
                     </div>
                 </div>
             )
