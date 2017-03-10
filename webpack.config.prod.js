@@ -1,6 +1,11 @@
+// command Demo: webpack -p --progress --config webpack.config.prod.js ; cp public/bundle.js ../DidiVisionDemo/bundle.js ; rm -rf ../DidiVisionDemo/img ../DidiVisionDemo/css/; cp -R index.html img css/ ../DidiVisionDemo/; cd ../DidiVisionDemo; git add * ; git commit -am "update"; git push; cd  ../DidiVision
+
+// command Live: cp public/bundle.js ../DidiVisionLive/bundle.js ; rm -rf ../DidiVisionLive/img ../DidiVisionLive/css/; cp -R index.html img css/ ../DidiVisionLive/; cd ../DidiVisionLive; git add * ; git commit -am "update"; git push; cd  ../DidiVision
+
 "use strict";
-var webpack = require('webpack');
-let path = require('path');
+
+let webpack = require("webpack");
+let path = require("path");
 
 // get git info from command line
 let commitHash = require('child_process')
@@ -8,9 +13,8 @@ let commitHash = require('child_process')
   .toString();
 
 module.exports = {
-    devtool: 'unline-source-map',
+    devtool: 'cheap-module-source-map',
     entry: [
-        'webpack-dev-server/client?http://127.0.0.1:8080/',
         'webpack/hot/only-dev-server',
         './src'
     ],
@@ -27,13 +31,18 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loaders:['react-hot','babel?presets[]=react,presets[]=latest']
+                loaders: ['react-hot', 'babel?presets[]=react,presets[]=latest']
             }
         ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
+        new webpack.DefinePlugin({
+            'process.env': {
+            'NODE_ENV': JSON.stringify('production')
+            }
+        }),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
