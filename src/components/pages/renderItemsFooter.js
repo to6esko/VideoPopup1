@@ -15,7 +15,8 @@ export default class RenderItemsNav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showEditButton: false,
+            showEnterButton: false,
+            showDeleteButton: false,
             comment
         };
     }
@@ -42,28 +43,65 @@ export default class RenderItemsNav extends React.Component {
             <AddText key={i} {...todo} />)
     }
 
-    handleClick() {
+    handleEnterClick() {
+        this.setState({
+            showEnterButton: true
+        });
+    }
+    handleDeleteClick() {
+        this.setState({
+            showDeleteButton: true
+        })
+    }
+    onEnterClik() {
         this.setState(prevState => ({
-            showEditButton: !prevState.showEditButton
+            showEnterButton: !prevState.showEnterButton
         }));
     }
-
-    editButton(props) {
-        const showEditButton = this.state.showEditButton;
-        if (!showEditButton) {
+    onDeleteClick() {
+        this.setState(prevState => ({
+            showDeleteButton: !prevState.showDeleteButton,
+            showEnterButton: false
+        }));
+    }
+    
+     enterButton(props) {
+        const showEnterButton = this.state.showEnterButton;
+        if (!showEnterButton) {
             return null;
         } else {
             return (
                 <div onSubmit={this.createComment.bind(this)}>
-                    <button className="footer-enter" onClick={this.onEnterClick.bind(this)}>Enter</button>
-                    <br />
+                    <div onClick={this.handleDeleteClick.bind(this)}>
+                        <button className="footer-enter" onClick={this.onEnterClick.bind(this)}>Enter</button>
+                    </div>
                     <div>
-                        {this.renderComments()}
-                        </div>
-                    <div onClick={this.handleClick.bind(this)}>
-                        <button className="footer-delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
+                    {this.deleteButton() }
                     </div>
                 </div>
+            )
+            
+        }
+        
+    }
+    deleteButton(props) {
+        const showDeleteButton = this.state.showDeleteButton;
+        if (!showDeleteButton) {
+            return null;
+        } else {
+            return (
+                    <div>
+                        <div className="textBox">
+                            <img src="img/snimka.jpg" alt="Stoyan" />
+                            <div className="text">
+                                <img src="img/stoqn.jpg" alt="Stoqn" />
+                            </div>
+                                {this.renderComments()}
+                            </div>
+                            <div onClick={this.onDeleteClick.bind(this)}>
+                                <button className="footer-delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
+                            </div>
+                    </div>
             )
         }
     }
@@ -72,8 +110,8 @@ export default class RenderItemsNav extends React.Component {
             <div>
                 <form className="reply" >
                     <img className="piramida" src="img/piramida.jpg" alt="piramida" />
-                    <input onClick={this.handleClick.bind(this)} ref="createText" type="text" className="reply-comment" placeholder="Reply..." />
-                    {this.editButton()}
+                    <input onChange={this.handleEnterClick.bind(this)} ref="createText" type="text" className="comment" placeholder="comment..." />
+                    {this.enterButton()}
                 </form>
             </div>
         )
