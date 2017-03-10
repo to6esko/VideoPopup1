@@ -205,20 +205,6 @@ li img:hover{
     box-sizing: border-box;
 }
 
-.commentContent {
-    font-family: Myriad Pro Regular;
-    color: #192a3e;
-    font-size: 13pt;
-    height: 40px;
-    padding:0 0 0 20px;
-    display: inline-block;
-    box-sizing: border-box;
-    width: 91.2%;
-    position:relative;
-    top: 44px;
-    margin-left:-58px; 
-}
- 
  .enter{
     float: right;
     margin: -55px -2px 0 0;
@@ -273,19 +259,19 @@ li img:hover{
 .commentText{
     width: 91.2%;
     position:relative;
-    top: -60px;
-    margin:-175px 0 0 30px;
+    top: -44px;
+    margin:-187px 0 0 30px;
 }
 
 .footer{
     display: block;
     position:relative;
     margin-left: -3px;
-    top:-80px;
+    top:-69px;
 }
 .btn-footer{
     position: relative;
-    top:95px;
+    top:88px;
 }
 .btn-footer ul{
     margin-left: -8px;
@@ -358,9 +344,24 @@ li img:hover{
     left:24px;
     top:-4px;
 }
+
+.commentContent {
+    font-family: Myriad Pro Regular;
+    color: #192a3e;
+    font-size: 13pt;
+    height: 40px;
+    padding:0 0 0 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 91.2%;
+    position:relative;
+    top: 50px;
+    margin-left:-56px; 
+}
+
 .footer-enter{
     float: right;
-    margin: 5px -63px 0 0;
+    margin: 5px -64px 0 0;
     padding: 5px 10px 5px 10px;
     text-transform: uppercase;
     background: black;
@@ -380,7 +381,7 @@ li img:hover{
     right: 5px;
     top:120px;
     padding: 5px 10px 5px 10px;
-    margin: 10px -68px 0 0;
+    margin: 10px -69px 0 0;
     text-transform: uppercase;
     background: red;
     color: white;
