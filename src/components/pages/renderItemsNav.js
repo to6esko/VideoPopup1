@@ -17,7 +17,7 @@ export default class RenderItemsNav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showEditButton: false,
+            showEnterButton: false,
             showDeleteButton: false,
             comment
         };
@@ -45,9 +45,9 @@ export default class RenderItemsNav extends React.Component {
             <AddText key={i} {...todo} />)
     }
 
-    handleEditClick() {
+    handleEnterClick() {
         this.setState({
-            showEditButton: true
+            showEnterButton: true
         });
     }
     handleDeleteClick() {
@@ -55,19 +55,20 @@ export default class RenderItemsNav extends React.Component {
             showDeleteButton: true
         })
     }
-    onEditClik() {
+    onEnterClik() {
         this.setState(prevState => ({
-            showEditButton: !prevState.showEditButton
+            showEnterButton: !prevState.showEnterButton
         }));
     }
     onDeleteClick() {
         this.setState(prevState => ({
-            showDeleteButton: !prevState.showDeleteButton
+            showDeleteButton: !prevState.showDeleteButton,
+            showEnterButton: false
         }));
     }
-    editButton(props) {
-        const showEditButton = this.state.showEditButton;
-        if (!showEditButton) {
+    enterButton(props) {
+        const showEnterButton = this.state.showEnterButton;
+        if (!showEnterButton) {
             return null;
         } else {
             return (
@@ -82,6 +83,7 @@ export default class RenderItemsNav extends React.Component {
             )
             
         }
+        
     }
 
     deleteButton(props) {
@@ -121,9 +123,9 @@ export default class RenderItemsNav extends React.Component {
         return (
             <div>
                 <div className="commentBox" >
-                    <input onChange={this.handleEditClick.bind(this)} ref="createText" type="text" className="comment" placeholder="comment..." />
+                    <input onChange={this.handleEnterClick.bind(this)} ref="createText" type="text" className="comment" placeholder="comment..." />
                     <div className="border-bottom" />
-                    {this.editButton()}
+                    {this.enterButton()}
                 </div>
             </div>
         )

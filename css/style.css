@@ -12,16 +12,14 @@ html,body{
     display: none; 
 }
 
-.pop .pop-form .pop-input .pop-btn .btn .video-container iframe, .video-container object, 
-.video-container embed
+.pop .pop-form .pop-input .pop-btn .btn .video .video-container 
 .btn-left .btn-right .border-bottom .commentBox .comment .contentText 
 .border-bottom .textBox .text .gradient .commentText .footer 
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
 .reply-comment .piramida .commentContent .enter .delete .worning{
     zoom:1;
 }
-.pop .pop-form .pop-input .pop-btn .btn .video-container iframe, .video-container object, 
-.video-container embed
+.pop .pop-form .pop-input .pop-btn .btn .video .video-container 
 .btn-left .btn-right .border-bottom .commentBox .comment .contentText
 .border-bottom .textBox .text .gradient .commentText .footer
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
@@ -134,7 +132,12 @@ li img:hover{
     opacity: 0.5;
 }
 
-
+.video{
+    position: relative;
+    width: 93%;
+    height: 412px;
+    margin: 31px 29px 0 32px;
+}
 .video-container {
 	position:relative;
 	height:0;

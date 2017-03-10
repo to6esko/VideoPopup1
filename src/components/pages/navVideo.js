@@ -7,9 +7,10 @@ export default class NavVideo extends React.Component {
     render() {
         return (
             <div>
-                <div className="video">
+                {/*<div className="video">*/}
                     {/*<img src='img/video.jpg' alt="video" />*/}
-                </div>
+                {/*</div>*/}
+                
                 <div className="btn">
                     <div className="btn-left">
                         <ul>
