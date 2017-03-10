@@ -58,7 +58,7 @@ export default class App extends React.Component {
     validateInput(event) {
         let valueInput = event.target.value;
         if (valueInput.length >= 3 && valueInput.length <= 5) {
-            return alert('Please "Paste" your You Tube addres!');
+            return alert('Please "Paste" your You Tube address!!!');
         }
     }    
 
