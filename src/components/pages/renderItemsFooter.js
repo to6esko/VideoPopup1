@@ -8,10 +8,10 @@ const comment = [
 ];
 
 function AddText(props) {
-    return <div className="commentContent">{props.comments}</div>
+    return <div>{props.comments}</div>
 }
 
-export default class RenderItemsNav extends React.Component {
+export default class RenderItemsFooter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -64,8 +64,8 @@ export default class RenderItemsNav extends React.Component {
             showEnterButton: false
         }));
     }
-    
-     enterButton(props) {
+
+    enterButton(props) {
         const showEnterButton = this.state.showEnterButton;
         if (!showEnterButton) {
             return null;
@@ -76,13 +76,13 @@ export default class RenderItemsNav extends React.Component {
                         <button className="footer-enter" onClick={this.onEnterClick.bind(this)}>Enter</button>
                     </div>
                     <div>
-                    {this.deleteButton() }
+                        {this.deleteButton()}
                     </div>
                 </div>
             )
-            
+
         }
-        
+
     }
     deleteButton(props) {
         const showDeleteButton = this.state.showDeleteButton;
@@ -90,18 +90,21 @@ export default class RenderItemsNav extends React.Component {
             return null;
         } else {
             return (
-                    <div>
-                        <div className="textBox">
-                            <img src="img/snimka.jpg" alt="Stoyan" />
-                            <div className="text">
-                                <img src="img/stoqn.jpg" alt="Stoqn" />
-                            </div>
+                <div>
+                    <div onClick={this.onDeleteClick.bind(this)}>
+                    <div className="textBox">
+                        <img src="img/snimka.jpg" alt="Stoyan" />
+                        <div className="text">
+                            <img src="img/stoqn.jpg" alt="Stoqn" />
+
+                            <div className="commentContent">
                                 {this.renderComments()}
                             </div>
-                            <div onClick={this.onDeleteClick.bind(this)}>
-                                <button className="footer-delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
-                            </div>
+                        </div>
+                            <button className="footer-delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
+                        </div>
                     </div>
+                </div>
             )
         }
     }
@@ -110,7 +113,7 @@ export default class RenderItemsNav extends React.Component {
             <div>
                 <form className="reply" >
                     <img className="piramida" src="img/piramida.jpg" alt="piramida" />
-                    <input onChange={this.handleEnterClick.bind(this)} ref="createText" type="text" className="comment" placeholder="comment..." />
+                    <input onChange={this.handleEnterClick.bind(this)} ref="createText" type="text" className="reply-comment" placeholder="Reply..." />
                     {this.enterButton()}
                 </form>
             </div>

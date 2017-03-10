@@ -10,7 +10,7 @@ const comment = [
 ];
 
 function AddText(props) {
-    return <div className="commentContent">{props.comments}</div>
+    return <div>{props.comments}</div>
 }
 
 export default class RenderItemsNav extends React.Component {
@@ -77,13 +77,13 @@ export default class RenderItemsNav extends React.Component {
                         <button className="enter" onClick={this.onEnterClick.bind(this)}>Enter</button>
                     </div>
                     <div>
-                    {this.deleteButton() }
+                        {this.deleteButton()}
                     </div>
                 </div>
             )
-            
+
         }
-        
+
     }
 
     deleteButton(props) {
@@ -92,8 +92,8 @@ export default class RenderItemsNav extends React.Component {
             return null;
         } else {
             return (
-                    <div>
-                        <div>
+                <div>
+                    
                         <div className="textBox">
                             <img src="img/snimka.jpg" alt="Stoyan" />
                             <div className="text">
@@ -101,18 +101,17 @@ export default class RenderItemsNav extends React.Component {
                             </div>
                             <div className="gradient">
                                 <img src="img/gradient.jpg" alt="gradient" />
-                            
-                            <div className="commentText">
-                                {this.renderComments()}
-                                {/*<img src="img/text.jpg" alt="text" width="790" height="72" />*/}
-                            </div>
-                            <div onClick={this.onDeleteClick.bind(this)}>
+
+                                <div className="commentText">
+                                    {this.renderComments()}
+                                    {/*<img src="img/text.jpg" alt="text" width="790" height="72" />*/}
+                                </div>
+                                 <div onClick={this.onDeleteClick.bind(this)}>
                                 <button className="delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
                             </div>
                             <div>
                                 <Footer />
-                            </div> 
-                            </div>    
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -45,7 +45,7 @@ body{
 }
 .backgroundApp {
     max-width: 100%;
-    height: auto;
+    max-height: auto;
     position: absolute;
     margin:50px 0 50px 0;
     background-color: white;
@@ -209,11 +209,14 @@ li img:hover{
     font-family: Myriad Pro Regular;
     color: #192a3e;
     font-size: 13pt;
-    height: 50px;
-    width: 100%;
+    height: 40px;
     padding:0 0 0 20px;
     display: inline-block;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    width: 91.2%;
+    position:relative;
+    top: 44px;
+    margin-left:-58px; 
 }
  
  .enter{
@@ -234,8 +237,8 @@ li img:hover{
  .delete{
     position: absolute;
     float: right;
-    right: 5px;
-    top:120px;
+    right: -26px;
+    top:35px;
     padding: 5px 10px 5px 10px;
     margin: 32px -7px 0 0;
     text-transform: uppercase;
@@ -255,7 +258,6 @@ li img:hover{
     position: relative;
     padding:21px 31px 0 0;
     margin-left: -18px;
-    border-radius: 5px;
 }
 
 .text{
@@ -265,24 +267,25 @@ li img:hover{
    line-height: 0%;
 }
 .gradient{
+    position: relative;
     margin: -18px 0 0 1px;
 }
 .commentText{
     width: 91.2%;
-    position:absolute;
-    top: 103px;
-    margin:22px 0 0 30px;
+    position:relative;
+    top: -60px;
+    margin:-175px 0 0 30px;
 }
 
 .footer{
     display: block;
     position:relative;
     margin-left: -3px;
-    top:-176px;
+    top:-80px;
 }
 .btn-footer{
-    position: absolute;
-    top:25px;
+    position: relative;
+    top:95px;
 }
 .btn-footer ul{
     margin-left: -8px;
