@@ -121,7 +121,7 @@ export default class App extends React.Component {
                     <div className="pop">
                         <form className="pop-form" onSubmit={this.handleSubmit.bind(this)}>
                             <div onChange={this.validateInput.bind(this)}>
-                                <input ref="urlValue" onPaste={this.handleEnterClick.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube addres..." />
+                                <input ref="urlValue" onPaste={this.handleEnterClick.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube address..." />
                             </div>    
                             <div onClick={this.handlePopClick.bind(this)}>
                                 {this.closeButton()}
