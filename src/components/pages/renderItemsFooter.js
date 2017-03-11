@@ -25,9 +25,9 @@ export default class RenderItemsFooter extends React.Component {
         this.setState({ comment: this.state.comment });
     }
 
-    deleteComment(id) {
+    deleteComment() {
         _.remove(this.state.comment, todo =>
-            todo.id === id);
+            todo.comments === comments);
         this.setState({ comment: this.state.comment });
     }
 

@@ -27,9 +27,9 @@ export default class RenderItemsNav extends React.Component {
         this.setState({ comment: this.state.comment });
     }
 
-    deleteComment(id) {
+    deleteComment() {
         _.remove(this.state.comment, todo =>
-            todo.id === id);
+            todo.comments === comments);
         this.setState({ comment: this.state.comment });
     }
 
@@ -93,20 +93,19 @@ export default class RenderItemsNav extends React.Component {
         } else {
             return (
                 <div>
-                    
-                        <div className="textBox">
-                            <img src="img/snimka.jpg" alt="Stoyan" />
-                            <div className="text">
-                                <img src="img/stoqn.jpg" alt="Stoqn" />
-                            </div>
-                            <div className="gradient">
-                                <img src="img/gradient.jpg" alt="gradient" />
+                    <div className="textBox">
+                        <img src="img/snimka.jpg" alt="Stoyan" />
+                        <div className="text">
+                            <img src="img/stoqn.jpg" alt="Stoqn" />
+                        </div>
+                        <div className="gradient">
+                            <img src="img/gradient.jpg" alt="gradient" />
 
-                                <div className="commentText">
-                                    {this.renderComments()}
-                                    {/*<img src="img/text.jpg" alt="text" width="790" height="72" />*/}
-                                </div>
-                                 <div onClick={this.onDeleteClick.bind(this)}>
+                            <div className="commentText">
+                                {this.renderComments()}
+                                {/*<img src="img/text.jpg" alt="text" width="790" height="72" />*/}
+                            </div>
+                            <div onClick={this.onDeleteClick.bind(this)}>
                                 <button className="delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
                             </div>
                             <div>
