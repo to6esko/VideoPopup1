@@ -6,7 +6,7 @@ import RenderItemsNav from './pages/renderItemsNav';
 import Footer from './pages/footer';
 
 
-const urlAddres = [
+const urlAddress = [
     {
         url: ''
     }
@@ -18,13 +18,13 @@ export default class App extends React.Component {
         this.state = {
             showPop: true,
             showEnter: false,
-            urlAddres
+            urlAddress
         }
     }
 
     handleSubmit(url) {
-        this.state.urlAddres.push(url);
-        this.setState({ urlAddres: this.state.urlAddres });
+        this.state.urlAddress.push(url);
+        this.setState({ urlAddress: this.state.urlAddress });
     }
     getUrl(event) {
         event.preventDefault();
@@ -35,7 +35,7 @@ export default class App extends React.Component {
     }
 
     addUrl() {
-        let url = this.state.urlAddres[1];
+        let url = this.state.urlAddress[1];
         console.log(url);
 
         let rexg = /(([a-zA-Z0-9\-_])+$)(?:&feature=related)?(?:[\w\-]{0})?/g
@@ -58,7 +58,11 @@ export default class App extends React.Component {
     validateInput(event) {
         let valueInput = event.target.value;
         if (valueInput.length >= 3 && valueInput.length <= 5) {
-            return alert('Please "Paste" your You Tube address!!!');
+            return (
+                <div className="worning">
+                <h1>'Please "Paste" your You Tube address!!!';</h1>
+                </div>
+            )
         }
     }    
 
