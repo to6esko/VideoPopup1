@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import _ from 'lodash';
 
 import NavVideo from './pages/navVideo';
 import RenderItemsNav from './pages/renderItemsNav';
@@ -11,7 +12,9 @@ const urlAddress = [
         url: ''
     }
 ];
-
+function AddUrlAddress(props) {
+    return <div>{props.url}</div>
+}
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -35,17 +38,17 @@ export default class App extends React.Component {
     }
 
     addUrl() {
-        let url = this.state.urlAddress[1];
-        console.log(url);
+        let urls = this.state.urlAddress[1];
+        console.log(urls);
 
         let rexg = /(([a-zA-Z0-9\-_])+$)(?:&feature=related)?(?:[\w\-]{0})?/g
-        let matches = url.match(rexg);
+        let matches = urls.match(rexg);
 
         let newUrl = "https://www.youtube.com/embed/" + matches;
         console.log('newUrl: ' + newUrl);
 
         let showPop = this.state.showPop;
-        if (showPop === true) {
+        if (showPop) {
             return null;
         } else {
             return (
@@ -54,18 +57,31 @@ export default class App extends React.Component {
                 </div>
             )
         }
+        this.setState({ urlAddress: this.state.urlAddress });
     }
+
+
     validateInput(event) {
         let valueInput = event.target.value;
-        if (valueInput.length >= 3 && valueInput.length <= 5) {
-            return (
-                <div className="worning">
-                <h1>'Please "Paste" your You Tube address!!!';</h1>
-                </div>
-            )
+        let message = 'Please "Paste" your You Tube address!!!'
+        if (valueInput.length >= 3 && valueInput.length <= 4) {
+            return alert(message);
         }
-    }    
+    }
 
+    deleteUrlAddress(id) {
+        _.remove(this.state.urlAddress, todo =>
+            todo.id === id);
+        this.setState({ urlAddress: this.state.urlAddress });
+    }
+    renderUrlAddress() {
+        return _.map(this.state.urlAddress, (todo,i) =>
+           <div key={i}>    
+                <AddUrlAddress {...todo} />
+            {this.addUrl()}
+            </div>    
+        )
+    }
 
     showPage() {
         const showPop = this.state.showPop;
@@ -79,8 +95,17 @@ export default class App extends React.Component {
                             <a href="#" className="close-icon"></a>
                         </div>
                         <div>
-                            {this.addUrl()}
+                            {this.renderUrlAddress()}
+                            
                             <NavVideo />
+                            <div className="btn">
+                                <div className="btn-right">
+                                    <ul>
+                                        <li><img src="img/btn-edit.jpg" alt="edit" /></li>
+                                        <li><img onClick={this.deleteUrlAddress.bind(this,this.props.url)} src="img/btn-delete.jpg" alt="delete" /></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         <div>
                             <RenderItemsNav />
@@ -126,7 +151,7 @@ export default class App extends React.Component {
                         <form className="pop-form" onSubmit={this.handleSubmit.bind(this)}>
                             <div onChange={this.validateInput.bind(this)}>
                                 <input ref="urlValue" onPaste={this.handleEnterClick.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube address..." />
-                            </div>    
+                            </div>
                             <div onClick={this.handlePopClick.bind(this)}>
                                 {this.closeButton()}
                             </div>

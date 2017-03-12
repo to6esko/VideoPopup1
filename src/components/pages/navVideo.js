@@ -18,12 +18,7 @@ export default class NavVideo extends React.Component {
                             <li><img src="img/btn-share.jpg" alt="share" /></li>
                         </ul>
                     </div>
-                    <div className="btn-right">
-                        <ul>
-                            <li><img src="img/btn-edit.jpg" alt="edit" /></li>
-                            <li><img src="img/btn-delete.jpg" alt="delete" /></li>
-                        </ul>
-                    </div>
+                    
                 </div>
             </div>
         )

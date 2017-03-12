@@ -16,14 +16,14 @@ html,body{
 .btn-left .btn-right .border-bottom .commentBox .comment .contentText 
 .border-bottom .textBox .text .gradient .commentText .footer 
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
-.reply-comment .piramida .commentContent .enter .delete .worning{
+.reply-comment .piramida .commentContent .enter .delete{
     zoom:1;
 }
 .pop .pop-form .pop-input .pop-btn .btn .video .video-container 
 .btn-left .btn-right .border-bottom .commentBox .comment .contentText
 .border-bottom .textBox .text .gradient .commentText .footer
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
-.reply-comment .piramida .commentContent .enter .delete .worning{
+.reply-comment .piramida .commentContent .enter .delete {
     content: "";
     clear: both;
     display: block;
@@ -79,7 +79,7 @@ a.close-icon:hover{
     border: 1px solid #AEAEAE;
     border-radius: 30px;
     background: #605F61;
-    font-size: 31px;
+    
     font-weight: bold;
     display: inline-block;
     line-height: 0px;
@@ -108,11 +108,6 @@ li img:hover{
 
 .pop-input{
     padding: 2px 15px 2px 15px;
-}
-
-.worning {
-    position: relative;
-    color:red;
 }
 
 .pop-btn{

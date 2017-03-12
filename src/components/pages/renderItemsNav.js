@@ -26,13 +26,6 @@ export default class RenderItemsNav extends React.Component {
         this.state.comment.push({ comments })
         this.setState({ comment: this.state.comment });
     }
-
-    deleteComment(id) {
-        _.remove(this.state.comment, todo =>
-            todo.id === id);
-        this.setState({ comment: this.state.comment });
-    }
-
     onEnterClick(event) {
         event.preventDefault();
         const createText = this.refs.createText;
@@ -40,11 +33,19 @@ export default class RenderItemsNav extends React.Component {
         this.createComment(val);
         this.refs.createText.value = "";
     }
+
+
+    deleteComment(id) {
+        _.remove(this.state.comment, todo =>
+            todo.id === id);
+        this.setState({ comment: this.state.comment });
+    }
     renderComments() {
         return _.map(this.state.comment, (todo, i) =>
             <AddText key={i} {...todo} />)
     }
 
+    
     handleEnterClick() {
         this.setState({
             showEnterButton: true
