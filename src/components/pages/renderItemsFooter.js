@@ -25,6 +25,7 @@ export default class RenderItemsFooter extends React.Component {
         this.state.comment.push({ comments })
         this.setState({ comment: this.state.comment });
     }
+    
     onEnterClick(event) {
         event.preventDefault();
         const createText = this.refs.createText;
