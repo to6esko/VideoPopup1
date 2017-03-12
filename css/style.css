@@ -45,7 +45,7 @@ body{
 }
 .backgroundApp {
     max-width: 100%;
-    max-height: auto;
+    height: auto;
     position: absolute;
     margin:50px 0 50px 0;
     background-color: white;
@@ -128,14 +128,13 @@ li img:hover{
 }
 
 .video{
-    position: relative;
-    width: 93%;
-    height: 412px;
+    position:relative;
     margin: 31px 29px 0 32px;
+    width: 806px;
+    height: 412px;
 }
 .video-container {
 	position:relative;
-	height:0;
     margin: 31px 29px 0 32px;
     width: 806px;
     height: 412px;

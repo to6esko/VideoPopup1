@@ -75,12 +75,31 @@ export default class App extends React.Component {
         this.setState({ urlAddress: this.state.urlAddress });
     }
     renderUrlAddress() {
-        return _.map(this.state.urlAddress, (todo,i) =>
-           <div key={i}>    
+        return _.map(this.state.urlAddress, (todo, i) =>
+            <div key={i}>
                 <AddUrlAddress {...todo} />
-            {this.addUrl()}
-            </div>    
+                {this.addUrl()}
+            </div>
         )
+    }
+    handleDeleteClick() {
+        this.setState(prevState => ({
+            showEnter: !prevState.showEnter,
+            showEnter: true
+        }));
+    }
+    addImg() {
+        const showEnter = this.state.showEnter;
+        if (!showEnter) {
+            return null;
+        } else {
+            return (
+
+                <div className="video" >
+                    <img src='img/video.jpg' alt="video" />
+                </div>
+            )
+        }
     }
 
     showPage() {
@@ -96,13 +115,17 @@ export default class App extends React.Component {
                         </div>
                         <div>
                             {this.renderUrlAddress()}
-                            
+
+                            {this.addImg()}
                             <NavVideo />
                             <div className="btn">
                                 <div className="btn-right">
                                     <ul>
                                         <li><img src="img/btn-edit.jpg" alt="edit" /></li>
-                                        <li><img onClick={this.deleteUrlAddress.bind(this,this.props.url)} src="img/btn-delete.jpg" alt="delete" /></li>
+
+                                        <div onClick={this.handleDeleteClick.bind(this)}>
+                                            <li><img onClick={this.deleteUrlAddress.bind(this, this.props.url)} src="img/btn-delete.jpg" alt="delete" /></li>
+                                        </div>
                                     </ul>
                                 </div>
                             </div>
@@ -121,7 +144,6 @@ export default class App extends React.Component {
             showEnter: !prevState.showEnter
         }));
     }
-
     handlePopClick() {
         this.setState(prevState => ({
             showPop: !prevState.showPop
