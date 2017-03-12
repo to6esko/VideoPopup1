@@ -12,9 +12,7 @@ const urlAddress = [
         url: ''
     }
 ];
-function AddUrlAddress(props) {
-    return <div>{props.url}</div>
-}
+
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -38,11 +36,11 @@ export default class App extends React.Component {
     }
 
     addUrl() {
-        let urls = this.state.urlAddress[1];
-        console.log(urls);
+        let url = this.state.urlAddress[1];
+        console.log(url);
 
         let rexg = /(([a-zA-Z0-9\-_])+$)(?:&feature=related)?(?:[\w\-]{0})?/g
-        let matches = urls.match(rexg);
+        let matches = url.match(rexg);
 
         let newUrl = "https://www.youtube.com/embed/" + matches;
         console.log('newUrl: ' + newUrl);
@@ -57,7 +55,6 @@ export default class App extends React.Component {
                 </div>
             )
         }
-        this.setState({ urlAddress: this.state.urlAddress });
     }
 
 
@@ -75,12 +72,13 @@ export default class App extends React.Component {
         this.setState({ urlAddress: this.state.urlAddress });
     }
     renderUrlAddress() {
-        return _.map(this.state.urlAddress, (todo, i) =>
-            <div key={i}>
-                <AddUrlAddress {...todo} />
-                {this.addUrl()}
+        return _.map(this.state.urlAddress[0], (i) => 
+
+            <div key={i} >
+                    {this.addUrl()}
             </div>
         )
+        this.setState({ urlAddress: this.state.urlAddress });
     }
     handleDeleteClick() {
         this.setState(prevState => ({
@@ -94,7 +92,6 @@ export default class App extends React.Component {
             return null;
         } else {
             return (
-
                 <div className="video" >
                     <img src='img/video.jpg' alt="video" />
                 </div>
