@@ -19,6 +19,7 @@ export default class App extends React.Component {
         this.state = {
             showPop: true,
             showEnter: false,
+            showEditPop:false,
             urlAddress
         }
     }
@@ -80,6 +81,36 @@ export default class App extends React.Component {
         )
         this.setState({ urlAddress: this.state.urlAddress });
     }
+
+
+    handleEditClick() {
+        this.setState(prevState => ({
+            showEditPop: !prevState.showEditPop
+        }));
+        
+    }
+    addEditPop() {
+        const showEditPop = this.state.showEditPop;
+        if (!showEditPop ) {
+            return null;
+        }else{
+            return (
+                <div>
+                    <div className="pop">
+                        <form className="pop-form" onSubmit={this.handleSubmit.bind(this)}>
+                            <div onChange={this.validateInput.bind(this)}>
+                                <input ref="urlValue" onPaste={this.handleEnterClick.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube address..." />
+                            </div>
+                            <div onClick={this.handlePopClick.bind(this)}>
+                                {this.closeButton()}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )
+        }
+    }
+
     handleDeleteClick() {
         this.setState(prevState => ({
             showEnter: !prevState.showEnter,
@@ -112,14 +143,15 @@ export default class App extends React.Component {
                         </div>
                         <div>
                             {this.renderUrlAddress()}
-
+                            {this.addEditPop()}
                             {this.addImg()}
                             <NavVideo />
                             <div className="btn">
                                 <div className="btn-right">
                                     <ul>
-                                        <li><img src="img/btn-edit.jpg" alt="edit" /></li>
-
+                                        <div onClick={this.addEditPop.bind(this)} >
+                                            <li><img onClick={this.handleEditClick.bind(this)} src="img/btn-edit.jpg" alt="edit" /></li>
+                                        </div>
                                         <div onClick={this.handleDeleteClick.bind(this)}>
                                             <li><img onClick={this.deleteUrlAddress.bind(this, this.props.url)} src="img/btn-delete.jpg" alt="delete" /></li>
                                         </div>
