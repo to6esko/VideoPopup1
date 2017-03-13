@@ -75,7 +75,7 @@ export default class App extends React.Component {
         this.setState({ urlAddress: this.state.urlAddress });
     }
     renderUrlAddress() {
-        return _.map(this.state.urlAddress, (todo, i) =>
+        return _.map(this.state.urlAddress[0], (todo, i) =>
             <div key={i}>
                 <AddUrlAddress {...todo} />
                 {this.addUrl()}
