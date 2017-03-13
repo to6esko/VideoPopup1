@@ -190,7 +190,7 @@ export default class App extends React.Component {
                 {this.enterButton()}
                 {this.showPage()}
             </div>
-        )
+        );
     }
 }
 
