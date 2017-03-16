@@ -1,6 +1,3 @@
-// command Demo: webpack -p --progress --config webpack.config.prod.js ; cp public/bundle.js ../VideoPopupDemo/bundle.js ; rm -rf ../VideoPopupDemo/img ../VideoPopupDemo/css/; cp -R index.html img css/ ../VideoPopupDemo/; cd ../VideoPopupDemo; git add * ; git commit -am "update"; git push; cd  ../VideoPopup1
-
-
 
 "use strict";
 

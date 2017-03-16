@@ -6,13 +6,7 @@ import NavVideo from './pages/navVideo';
 import RenderItemsNav from './pages/renderItemsNav';
 import Footer from './pages/footer';
 
-/*
-const urlAddress = [
-    {
-        url: ''
-    }
-];
-*/
+
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -33,13 +27,11 @@ export default class App extends React.Component {
    
     addUrl() {
         const url = this.state.url;
-        console.log(url);
  
         const rexg = /(([a-zA-Z0-9\-_])+$)(?:&feature=related)?(?:[\w\-]{0})?/g
         const matchesUrl = url.match(rexg);
 
         const newUrl = "https://www.youtube.com/embed/" + matchesUrl;
-        console.log('newUrl: ' + newUrl);
 
         const deleteVideo = this.state.deleteVideo;
         if (deleteVideo) {
@@ -60,12 +52,6 @@ export default class App extends React.Component {
         if (valueInput.length >= 3 && valueInput.length <= 4) {
             return alert(message);
         }
-    }
-
-    deleteUrlAddress(id) {
-        _.remove(this.state.urlAddress, todo =>
-            todo.id === id);
-        this.setState({ urlAddress: this.state.urlAddress });
     }
     
     handleEditClick() {
@@ -139,7 +125,6 @@ export default class App extends React.Component {
                                     <ul>
                                         <div onClick={this.handleEditClick.bind(this)}>
                                             <li><img src="img/btn-edit.jpg" alt="edit" /></li>
-                                            {/*onClick={this.deleteUrlAddress.bind(this, this.props.url)} */}
                                         </div>
                                         <li><img onClick={this.handleDeleteClick.bind(this)} src="img/btn-delete.jpg" alt="delete" /></li>
                                     </ul>
