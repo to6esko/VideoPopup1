@@ -6,49 +6,43 @@ import NavVideo from './pages/navVideo';
 import RenderItemsNav from './pages/renderItemsNav';
 import Footer from './pages/footer';
 
-
+/*
 const urlAddress = [
     {
         url: ''
     }
 ];
-function AddUrlAddress(props) {
-    return <div>{props.url}</div>
-}
+*/
 export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             showPop: true,
-            showEnter: false,
-            urlAddress
+            url:''
         }
     }
 
-    handleSubmit(url) {
-        this.state.urlAddress.push(url);
-        this.setState({ urlAddress: this.state.urlAddress });
+    
+    handleSubmit(event) {
+         this.setState({ url: this.state.url});
     }
     getUrl(event) {
         event.preventDefault();
-        let urlValue = this.refs.urlValue;
-        let value = urlValue.value;
-        this.handleSubmit(value);
-        this.refs.urlValue.value = "";
+        this.setState({ url: event.target.value });
     }
-
+   
     addUrl() {
-        let urls = this.state.urlAddress[1];
-        console.log(urls);
+        const url = this.state.url;
+        console.log(url);
+ 
+        const rexg = /(([a-zA-Z0-9\-_])+$)(?:&feature=related)?(?:[\w\-]{0})?/g
+        const matchesUrl = url.match(rexg);
 
-        let rexg = /(([a-zA-Z0-9\-_])+$)(?:&feature=related)?(?:[\w\-]{0})?/g
-        let matches = urls.match(rexg);
-
-        let newUrl = "https://www.youtube.com/embed/" + matches;
+        const newUrl = "https://www.youtube.com/embed/" + matchesUrl;
         console.log('newUrl: ' + newUrl);
 
-        let showPop = this.state.showPop;
-        if (showPop) {
+        const deleteVideo = this.state.deleteVideo;
+        if (deleteVideo) {
             return null;
         } else {
             return (
@@ -57,10 +51,9 @@ export default class App extends React.Component {
                 </div>
             )
         }
-        this.setState({ urlAddress: this.state.urlAddress });
     }
 
-
+   
     validateInput(event) {
         let valueInput = event.target.value;
         let message = 'Please "Paste" your You Tube address!!!'
@@ -74,23 +67,46 @@ export default class App extends React.Component {
             todo.id === id);
         this.setState({ urlAddress: this.state.urlAddress });
     }
-    renderUrlAddress() {
-        return _.map(this.state.urlAddress[0], (todo, i) =>
-            <div key={i}>
-                <AddUrlAddress {...todo} />
-                {this.addUrl()}
-            </div>
-        )
+    
+    handleEditClick() {
+        this.setState(prevState => ({
+            newVideo: !prevState.newVideo
+        }));
     }
+    
+    addNewPop() {
+        const newVideo = this.state.newVideo;
+        if (!newVideo) {
+            return null;
+        } else {
+            return (
+                <div>
+                    <div className="pop">
+                        <form className="pop-form" onSubmit={this.handleSubmit.bind(this)}>
+                            <div onChange={this.validateInput.bind(this)}>
+                                <div onPaste={this.handleEnterClick.bind(this)}>
+                                <input ref="urlValue"  onChange={this.getUrl.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube address..." />
+                                </div>
+                                <div onClick={this.handleEditClick.bind(this)}>
+                                <button type="submit"   className="pop-btn">Enter</button>
+                                </div>
+                            </div>    
+                        </form>
+                    </div>
+                </div>
+            )
+        }
+    }
+
     handleDeleteClick() {
         this.setState(prevState => ({
-            showEnter: !prevState.showEnter,
-            showEnter: true
+            deleteVideo: !prevState.deleteVideo,
+            deleteVideo: true
         }));
     }
     addImg() {
-        const showEnter = this.state.showEnter;
-        if (!showEnter) {
+        const deleteVideo = this.state.deleteVideo;
+        if (!deleteVideo) {
             return null;
         } else {
             return (
@@ -114,18 +130,18 @@ export default class App extends React.Component {
                             <a href="#" className="close-icon"></a>
                         </div>
                         <div>
-                            {this.renderUrlAddress()}
-
+                            {this.addUrl()}
+                            {this.addNewPop()}
                             {this.addImg()}
                             <NavVideo />
                             <div className="btn">
                                 <div className="btn-right">
                                     <ul>
-                                        <li><img src="img/btn-edit.jpg" alt="edit" /></li>
-
-                                        <div onClick={this.handleDeleteClick.bind(this)}>
-                                            <li><img onClick={this.deleteUrlAddress.bind(this, this.props.url)} src="img/btn-delete.jpg" alt="delete" /></li>
+                                        <div onClick={this.handleEditClick.bind(this)}>
+                                            <li><img src="img/btn-edit.jpg" alt="edit" /></li>
+                                            {/*onClick={this.deleteUrlAddress.bind(this, this.props.url)} */}
                                         </div>
+                                        <li><img onClick={this.handleDeleteClick.bind(this)} src="img/btn-delete.jpg" alt="delete" /></li>
                                     </ul>
                                 </div>
                             </div>
@@ -156,13 +172,14 @@ export default class App extends React.Component {
         } else {
             return (
                 <div onClick={this.handleEnterClick.bind(this)}>
-                    <button onClick={this.getUrl.bind(this)} className="pop-btn">Enter</button>
+                    <button type="submit" className="pop-btn">Enter</button>
                 </div>
             )
         }
     }
 
-    enterButton(props) {
+    enterButton() {
+       
         const showPop = this.state.showPop;
         if (!showPop) {
             return null;
@@ -172,18 +189,20 @@ export default class App extends React.Component {
                     <div className="pop">
                         <form className="pop-form" onSubmit={this.handleSubmit.bind(this)}>
                             <div onChange={this.validateInput.bind(this)}>
-                                <input ref="urlValue" onPaste={this.handleEnterClick.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube address..." />
-                            </div>
-                            <div onClick={this.handlePopClick.bind(this)}>
+                                <div onPaste={this.handleEnterClick.bind(this)}>
+                                    <input ref="urlValue"  onChange={this.getUrl.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube address..." />
+                                    </div>    
+                                 <div onClick={this.handlePopClick.bind(this)}>
                                 {this.closeButton()}
-                            </div>
+                                </div>
+                            </div>    
                         </form>
                     </div>
                 </div>
             )
         }
     }
-
+   
     render() {
         return (
             <div>

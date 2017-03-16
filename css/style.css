@@ -44,7 +44,7 @@ body{
     max-height: 985px;
 }
 .backgroundApp {
-    max-width: 100%;
+    max-width: 867px;
     height: auto;
     position: absolute;
     margin:50px 0 50px 0;
@@ -238,6 +238,7 @@ li img:hover{
     position: relative;
     padding:21px 31px 0 0;
     margin-left: -18px;
+    word-wrap: break-word;
 }
 
 .text{
@@ -255,6 +256,7 @@ li img:hover{
     position:relative;
     top: -44px;
     margin:-187px 0 0 30px;
+    word-wrap: break-word;
 }
 
 .footer{
@@ -344,6 +346,7 @@ li img:hover{
     color: #192a3e;
     font-size: 13pt;
     height: 40px;
+    word-wrap: break-word;
     padding:0 0 0 20px;
     display: inline-block;
     box-sizing: border-box;
