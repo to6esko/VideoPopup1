@@ -105,7 +105,6 @@ export default class RenderItemsNav extends React.Component {
 
                             <div className="commentText">
                                 {this.renderComments()}
-                                {/*<img src="img/text.jpg" alt="text" width="790" height="72" />*/}
                             </div>
                             <div onClick={this.onDeleteClick.bind(this)}>
                                 <button className="delete" onClick={this.deleteComment.bind(this, this.props.comments)}>Delete</button>
