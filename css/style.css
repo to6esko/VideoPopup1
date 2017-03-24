@@ -16,14 +16,14 @@ html,body{
 .btn-left .btn-right .border-bottom .commentBox .comment .contentText 
 .border-bottom .textBox .text .gradient .commentText .footer 
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
-.reply-comment .pyramid .commentContent .enter .delete{
+.reply-comment .pyramid1 .commentContent .enter .delete{
     zoom:1;
 }
 .pop .pop-form .pop-input .pop-btn .btn .video .video-container 
 .btn-left .btn-right .border-bottom .commentBox .comment .contentText
 .border-bottom .textBox .text .gradient .commentText .footer
 .btn-footer .btn-footer-right .footerBottom .footer-btn .reply 
-.reply-comment .pyramid .commentContent .enter .delete {
+.reply-comment .pyramid1 .commentContent .enter .delete {
     content: "";
     clear: both;
     display: block;
@@ -335,7 +335,7 @@ li img:hover{
     box-sizing: border-box;
 }
 
-.pyramid{
+.pyramid1{
     position: absolute;
     left:24px;
     top:-4px;
