@@ -12,22 +12,25 @@ export default class App extends React.Component {
         super(props);
         this.state = {
             showPop: true,
-            url:''
+            newVideo: false,
+            deleteVideo: false,
+            showEnter: false,
+            url: ''
         }
     }
 
-    
+
     handleSubmit(event) {
-         this.setState({ url: this.state.url});
+        this.setState({ url: this.state.url });
     }
     getUrl(event) {
         event.preventDefault();
         this.setState({ url: event.target.value });
     }
-   
+
     addUrl() {
         const url = this.state.url;
- 
+
         const rexg = /(([a-zA-Z0-9\-_])+$)(?:&feature=related)?(?:[\w\-]{0})?/g
         const matchesUrl = url.match(rexg);
 
@@ -45,7 +48,7 @@ export default class App extends React.Component {
         }
     }
 
-   
+
     validateInput(event) {
         let valueInput = event.target.value;
         let message = 'Please "Paste" your You Tube address!!!'
@@ -53,13 +56,13 @@ export default class App extends React.Component {
             return alert(message);
         }
     }
-    
+
     handleEditClick() {
         this.setState(prevState => ({
             newVideo: !prevState.newVideo
         }));
     }
-    
+
     addNewPop() {
         const newVideo = this.state.newVideo;
         if (!newVideo) {
@@ -71,12 +74,12 @@ export default class App extends React.Component {
                         <form className="pop-form" onSubmit={this.handleSubmit.bind(this)}>
                             <div onChange={this.validateInput.bind(this)}>
                                 <div onPaste={this.handleEnterClick.bind(this)}>
-                                <input ref="urlValue"  onChange={this.getUrl.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube address..." />
+                                    <input ref="urlValue" onChange={this.getUrl.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube address..." />
                                 </div>
                                 <div onClick={this.handleEditClick.bind(this)}>
-                                <button type="submit"   className="pop-btn">Enter</button>
+                                    <button type="submit" className="pop-btn">Enter</button>
                                 </div>
-                            </div>    
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -96,7 +99,6 @@ export default class App extends React.Component {
             return null;
         } else {
             return (
-
                 <div className="video" >
                     <img src='img/video.jpg' alt="video" />
                 </div>
@@ -123,9 +125,7 @@ export default class App extends React.Component {
                             <div className="btn">
                                 <div className="btn-right">
                                     <ul>
-                                        <div onClick={this.handleEditClick.bind(this)}>
-                                            <li><img src="img/btn-edit.jpg" alt="edit" /></li>
-                                        </div>
+                                        <li><img onClick={this.handleEditClick.bind(this)} src="img/btn-edit.jpg" alt="edit" /></li>
                                         <li><img onClick={this.handleDeleteClick.bind(this)} src="img/btn-delete.jpg" alt="delete" /></li>
                                     </ul>
                                 </div>
@@ -164,7 +164,7 @@ export default class App extends React.Component {
     }
 
     enterButton() {
-       
+
         const showPop = this.state.showPop;
         if (!showPop) {
             return null;
@@ -175,19 +175,19 @@ export default class App extends React.Component {
                         <form className="pop-form" onSubmit={this.handleSubmit.bind(this)}>
                             <div onChange={this.validateInput.bind(this)}>
                                 <div onPaste={this.handleEnterClick.bind(this)}>
-                                    <input ref="urlValue"  onChange={this.getUrl.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube address..." />
-                                    </div>    
-                                 <div onClick={this.handlePopClick.bind(this)}>
-                                {this.closeButton()}
+                                    <input ref="urlValue" onChange={this.getUrl.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube address..." />
                                 </div>
-                            </div>    
+                                <div onClick={this.handlePopClick.bind(this)}>
+                                    {this.closeButton()}
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
             )
         }
     }
-   
+
     render() {
         return (
             <div>
