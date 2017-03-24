@@ -117,7 +117,7 @@ export default class RenderItemsFooter extends React.Component {
         return (
             <div>
                 <form className="reply" >
-                    <img className="piramida" src="img/piramida.jpg" alt="piramida" />
+                    <img className="pyramid" src="img/pyramid.jpg" alt="piramida" />
                     <input onChange={this.handleEnterClick.bind(this)} ref="createText" type="text" className="reply-comment" placeholder="Reply..." />
                     {this.enterButton()}
                 </form>
