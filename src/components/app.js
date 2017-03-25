@@ -59,7 +59,8 @@ export default class App extends React.Component {
 
     handleEditClick() {
         this.setState(prevState => ({
-            newVideo: !prevState.newVideo
+            newVideo: !prevState.newVideo,
+            deleteVideo:false
         }));
     }
 
