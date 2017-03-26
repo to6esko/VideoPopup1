@@ -58,11 +58,7 @@ export default class RenderItemsFooter extends React.Component {
             showDeleteButton: true
         })
     }
-    onEnterClik() {
-        this.setState(prevState => ({
-            showEnterButton: !prevState.showEnterButton
-        }));
-    }
+    
     onDeleteClick() {
         this.setState(prevState => ({
             showDeleteButton: !prevState.showDeleteButton,
