@@ -52,7 +52,8 @@ export default class RenderItemsNav extends React.Component {
     }
     handleDeleteClick() {
         this.setState({ showDeleteButton: true });
-    }
+
+
     
     onDeleteClick() {
         this.setState(prevState => ({
