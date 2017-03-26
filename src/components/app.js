@@ -31,7 +31,7 @@ export default class App extends React.Component {
     addUrl() {
         const url = this.state.url;
 
-        const rexg = /(([a-zA-Z0-9\-_])+$)(?:&feature=related)?(?:[\w\-]{0})?/g
+        const rexg = /(([a-zA-Z0-9\-_])+$)(?:&feature=related)?(?:[\w\-]{0})?/igm
         const matchesUrl = url.match(rexg);
 
         const newUrl = "https://www.youtube.com/embed/" + matchesUrl;
