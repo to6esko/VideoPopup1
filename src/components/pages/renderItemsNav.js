@@ -23,7 +23,7 @@ export default class RenderItemsNav extends React.Component {
         };
     }
     createComment(comments) {
-        this.state.comment.push({ comments })
+        this.state.comment.push({ comments });
         this.setState({ comment: this.state.comment });
     }
     
@@ -48,20 +48,12 @@ export default class RenderItemsNav extends React.Component {
 
     
     handleEnterClick() {
-        this.setState({
-            showEnterButton: true
-        });
+        this.setState({ showEnterButton: true });
     }
     handleDeleteClick() {
-        this.setState({
-            showDeleteButton: true
-        })
+        this.setState({ showDeleteButton: true });
     }
-    onEnterClik() {
-        this.setState(prevState => ({
-            showEnterButton: !prevState.showEnterButton
-        }));
-    }
+    
     onDeleteClick() {
         this.setState(prevState => ({
             showDeleteButton: !prevState.showDeleteButton,
