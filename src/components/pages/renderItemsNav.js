@@ -50,7 +50,7 @@ export default class RenderItemsNav extends React.Component {
     showEnterButton() {
         this.setState({ showEnterButton: true });
     }
-    handleDeleteClick() {
+    showDeleteButton() {
         this.setState({ showDeleteButton: true });
     }
     
@@ -67,7 +67,7 @@ export default class RenderItemsNav extends React.Component {
         } else {
             return (
                 <div onSubmit={this.createComment.bind(this)}>
-                    <div onClick={this.handleDeleteClick.bind(this)}>
+                    <div onClick={this.showDeleteButton.bind(this)}>
                         <button className="enter" onClick={this.onEnterClick.bind(this)}>Enter</button>
                     </div>
                     <div>
