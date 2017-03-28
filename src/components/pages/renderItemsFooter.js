@@ -48,7 +48,7 @@ export default class RenderItemsFooter extends React.Component {
     
    
 
-    handleEnterClick() {
+    showEnterButton() {
         this.setState({
             showEnterButton: true
         });
@@ -114,7 +114,7 @@ export default class RenderItemsFooter extends React.Component {
             <div>
                 <form className="reply" >
                     <img className="pyramid" src="img/pyramid.jpg" alt="pyramid" />
-                    <input onChange={this.handleEnterClick.bind(this)} ref="createText" type="text" className="reply-comment" placeholder="Reply..." />
+                    <input onChange={this.showEnterButton.bind(this)} ref="createText" type="text" className="reply-comment" placeholder="Reply..." />
                     {this.enterButton()}
                 </form>
             </div>

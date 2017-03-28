@@ -47,7 +47,7 @@ export default class RenderItemsNav extends React.Component {
     }
 
     
-    handleEnterClick() {
+    showEnterButton() {
         this.setState({ showEnterButton: true });
     }
     handleDeleteClick() {
@@ -114,7 +114,7 @@ export default class RenderItemsNav extends React.Component {
         return (
             <div>
                 <div className="commentBox" >
-                    <input onChange={this.handleEnterClick.bind(this)} ref="createText" type="text" className="comment" placeholder="comment..." />
+                    <input onChange={this.showEnterButton.bind(this)} ref="createText" type="text" className="comment" placeholder="comment..." />
                     <div className="border-bottom" />
                     {this.enterButton()}
                 </div>
