@@ -74,7 +74,7 @@ export default class App extends React.Component {
                     <div className="pop">
                         <form className="pop-form" onSubmit={this.handleSubmit.bind(this)}>
                             <div onChange={this.validateInput.bind(this)}>
-                                <div onPaste={this.handleEnterClick.bind(this)}>
+                                <div onPaste={this.showEnterButton.bind(this)}>
                                     <input ref="urlValue" onChange={this.getUrl.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube address..." />
                                 </div>
                                 <div onClick={this.handleEditClick.bind(this)}>
@@ -141,7 +141,7 @@ export default class App extends React.Component {
         }
     }
 
-    handleEnterClick() {
+    showEnterButton() {
         this.setState(prevState => ({
             showEnter: !prevState.showEnter
         }));
@@ -157,7 +157,7 @@ export default class App extends React.Component {
             return null;
         } else {
             return (
-                <div onClick={this.handleEnterClick.bind(this)}>
+                <div onClick={this.showEnterButton.bind(this)}>
                     <button type="submit" className="pop-btn">Enter</button>
                 </div>
             )
@@ -175,7 +175,7 @@ export default class App extends React.Component {
                     <div className="pop">
                         <form className="pop-form" onSubmit={this.handleSubmit.bind(this)}>
                             <div onChange={this.validateInput.bind(this)}>
-                                <div onPaste={this.handleEnterClick.bind(this)}>
+                                <div onPaste={this.showEnterButton.bind(this)}>
                                     <input ref="urlValue" onChange={this.getUrl.bind(this)} type="text" className="pop-input" placeholder="Enter your You Tube address..." />
                                 </div>
                                 <div onClick={this.handlePopClick.bind(this)}>
