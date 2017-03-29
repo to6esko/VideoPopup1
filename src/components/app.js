@@ -32,7 +32,7 @@ export default class App extends React.Component {
         const url = this.state.url;
 
         const rexg = /(([a-zA-Z0-9\-_])+$)(?:&feature=related)?(?:[\w\-]{0})?/ig
-        const rexg2=/([^(http+(s)://www.youtu+(be|.be)+(.com)/wathch?v=+(&index)#\s)])(([\w\d\-_=]+){11})/g
+        const rexg2=/([^(http+(s):\/\/www.youtu+(be|.be)+(.com)\/wathch?v=+(&index)#\s)])(([\w\d\-_=]+){11})/g
         const matchesUrl = url.match(rexg);
         const matchesUrl2 = url.match(rexg2);
 
